@@ -1,7 +1,12 @@
 package ui;
 
 import java.io.PrintWriter;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.Scanner;
+
+import control.ThemMoiSVControl;
 
 public class ThemMoiSVUI {
 	
@@ -12,6 +17,8 @@ public class ThemMoiSVUI {
 	private String hoTenPrompt, nganhPrompt, diaChiPrompt,
 	ngaySinhPromt, diemJavaPrompt, diemCssPrompt, 
 	diemHtmlPrompt, diemMarketingPrompt, diemSalesPrompt;
+	
+	private ThemMoiSVControl themSVControl = null;
 	
 	//functions - methods
 	
@@ -41,6 +48,16 @@ public class ThemMoiSVUI {
 		String diaChi = keyBoardInput.nextLine();
 		screenOut.print(ngaySinhPromt);screenOut.flush();
 		String ngaySinh = keyBoardInput.nextLine();// dd/MM/yyyy
+		//convert ngaySinh kiểu chuỗi thành ngaySinh 
+		//kiểu java.util.Date
+		Date ngaySinhJava = null;
+		SimpleDateFormat spDateF = new SimpleDateFormat("dd/MM/yyyy");
+		try {
+			ngaySinhJava = spDateF.parse(ngaySinh);
+		} catch (ParseException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		
 		if("KTPM".equalsIgnoreCase(nganh)){
 			screenOut.print(diemJavaPrompt);screenOut.flush();
@@ -49,6 +66,8 @@ public class ThemMoiSVUI {
 			double diemCss = keyBoardInput.nextDouble();
 			screenOut.print(diemHtmlPrompt);screenOut.flush();
 			double diemHtml = keyBoardInput.nextDouble();
+			themSVControl.taoSV(hoTen, diaChi, ngaySinhJava, 
+					diemJava, diemCss, diemHtml);
 		}
 		
 		if("KT".equalsIgnoreCase(nganh)) {
@@ -56,6 +75,8 @@ public class ThemMoiSVUI {
 			double diemMarketing = keyBoardInput.nextDouble();
 			screenOut.print(diemSalesPrompt);screenOut.flush();
 			double diemSales = keyBoardInput.nextDouble();
+			themSVControl.taoSV(hoTen, diaChi, ngaySinhJava, 
+					diemSales, diemMarketing);
 		}
 	}
 	
