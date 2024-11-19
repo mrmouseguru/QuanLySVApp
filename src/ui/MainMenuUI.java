@@ -11,6 +11,7 @@ public class MainMenuUI {
 	private Scanner keyBoardInput = null;
 	private String loiNhac = "->";
 	private String command = " ";
+	private ThemMoiSVUI themSVUIRemote = null;
 	
 	//functions
 	//constructor
@@ -42,6 +43,11 @@ public class MainMenuUI {
 				continue;
 			}
 			
+			if("add".equalsIgnoreCase(command)) {
+				addSV();
+				continue;
+			}
+			
 		}
 		
 		
@@ -51,8 +57,19 @@ public class MainMenuUI {
 		screenOut.println("~~~~~Console Heplp Menu~~~~~");
 		//screenOut.flush();
 		screenOut.println("[HELP] Ho tro su dung phan mem");
+		screenOut.println("[ADD] Them moi SinhVien");
 		screenOut.println("~~~~~Console Heplp Menu~~~~~");
 
+	}
+	
+	private void addSV() {
+		//đối tượng MainMenuUI gửi thông điệp đến
+		//đối tượng X: có nhiệm vụ UI cho người dùng nhập 
+		//thông tin sinh viên muốn thêm mới
+		themSVUIRemote = new ThemMoiSVUI(screenOut, keyBoardInput);
+		themSVUIRemote.nhapThongTinSV();
+		
+		
 	}
 	
 	
