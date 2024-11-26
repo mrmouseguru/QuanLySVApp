@@ -22,4 +22,9 @@ public class ArrayListCoSoDuLieu {
 		csdl.add(sv);
 	}
 
+	public static ArrayList<SinhVien> getDSSV() {
+		// TODO Auto-generated method stub
+		return csdl;
+	}
+
 }
