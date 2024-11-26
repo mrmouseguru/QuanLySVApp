@@ -26,6 +26,11 @@ public class ThemMoiSVUI {
 		
 	}
 	
+	public ThemMoiSVUI(PrintWriter _screenOut, Scanner _keyBoardInput, ThemMoiSVControl _themMoiSVControl) {
+		this(_screenOut, _keyBoardInput);//goi constructor 2 tham so
+		themSVControl = _themMoiSVControl;
+	}
+	
 	public ThemMoiSVUI(PrintWriter _screenOut, Scanner _keyBoardInput) {
 		screenOut = _screenOut;
 		keyBoardInput = _keyBoardInput;

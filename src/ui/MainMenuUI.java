@@ -19,6 +19,12 @@ public class MainMenuUI {
 		//khởi tạo screenOut và keyBoardInput
 	}
 	
+	public MainMenuUI(PrintWriter _screenOut, Scanner _keyBoardInput,
+			ThemMoiSVUI _themMoiSVUI) {
+		this(_screenOut, _keyBoardInput);
+		themSVUIRemote = _themMoiSVUI;
+	}
+	
 	public MainMenuUI(PrintWriter _screenOut, Scanner _keyBoardInput) {
 		screenOut = _screenOut;
 		keyBoardInput = _keyBoardInput;
@@ -66,7 +72,7 @@ public class MainMenuUI {
 		//đối tượng MainMenuUI gửi thông điệp đến
 		//đối tượng X: có nhiệm vụ UI cho người dùng nhập 
 		//thông tin sinh viên muốn thêm mới
-		themSVUIRemote = new ThemMoiSVUI(screenOut, keyBoardInput);
+		//themSVUIRemote = new ThemMoiSVUI(screenOut, keyBoardInput);
 		themSVUIRemote.nhapThongTinSV();
 		
 		
