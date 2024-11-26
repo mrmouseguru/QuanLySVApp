@@ -25,6 +25,11 @@ public class SinhVienApp {
 		PrintWriter screenOutRemote = new PrintWriter(System.out, true);
 		Scanner keyBoardInputRemote = new Scanner(System.in);
 		
+		ThongBaoThemMoiSVUI tbThemMoiSV = new 
+				ThongBaoThemMoiSVUI(screenOutRemote);
+		
+		themSVControlRemote.setThongBaoThemMoiSVUI(tbThemMoiSV);
+
 		ThemMoiSVUI themMoiSVUIRemote = new 
 				ThemMoiSVUI(screenOutRemote, keyBoardInputRemote, 
 						themSVControlRemote);
