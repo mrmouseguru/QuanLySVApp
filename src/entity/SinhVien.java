@@ -37,6 +37,6 @@ public abstract class SinhVien {
         }
 	}
 	
-	protected abstract double tinhDiemTB();
+	public abstract double tinhDiemTB();
 
 }

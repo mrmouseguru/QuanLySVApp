@@ -11,8 +11,8 @@ public class InDSSVUI {
 	public void inDSSV(ArrayList<SinhVien> dsSV) {
 		// TODO Auto-generated method stub
 		for (SinhVien sinhVien : dsSV) {
-			
-			screenOut.println(sinhVien.toString());
+			screenOut.println(sinhVien.tinhDiemTB());
+			//screenOut.println(sinhVien.toString());
 		}
 		
 	}

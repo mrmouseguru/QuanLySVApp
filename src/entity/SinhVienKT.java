@@ -20,7 +20,7 @@ public class SinhVienKT extends SinhVien{
 	}
 
 	@Override
-	protected double tinhDiemTB() {
+	public double tinhDiemTB() {
 		return (2 * diemMarketing + diemSales) / 3;
 	}
 
