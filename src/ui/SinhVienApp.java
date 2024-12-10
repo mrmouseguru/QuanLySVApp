@@ -6,6 +6,7 @@ import java.util.Scanner;
 import control.ThemMoiSVControl;
 import database.ArrayListCoSoDuLieu;
 import database.ThemSVDAO;
+import database.ThemSVDAOFile;
 
 public class SinhVienApp {
 
@@ -15,7 +16,7 @@ public class SinhVienApp {
 		//ham initDatabase() la static
 		ArrayListCoSoDuLieu.initDatabase();
 		
-		ThemSVDAO themSVDAORemote = new ThemSVDAO();
+		ThemSVDAOFile themSVDAORemote = new ThemSVDAOFile("SV.data");
 		
 		ThemMoiSVControl themSVControlRemote = new 
 				ThemMoiSVControl(themSVDAORemote);

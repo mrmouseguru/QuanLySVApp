@@ -3,6 +3,7 @@ package control;
 import java.util.Date;
 
 import database.ThemSVDAO;
+import database.ThemSVDAOFile;
 import entity.SinhVien;
 import entity.SinhVienKT;
 import entity.SinhVienKTPM;
@@ -11,7 +12,8 @@ import ui.ThongBaoThemMoiSVUI;
 public class ThemMoiSVControl {
 	
 	//fields
-	private ThemSVDAO themSVDAO = null;
+	///private ThemSVDAO themSVDAO = null;
+	private ThemSVDAOFile daoFile = null;
 	private ThongBaoThemMoiSVUI tbThemMoiUI = null;
 	
 	
@@ -26,8 +28,8 @@ public class ThemMoiSVControl {
 		tbThemMoiUI = _tbThemMoiUI;
 	}
 	
-	public ThemMoiSVControl(ThemSVDAO _themSVDAO) {
-		themSVDAO = _themSVDAO;
+	public ThemMoiSVControl(ThemSVDAOFile daoFile) {
+		this.daoFile = daoFile;
 	}
 	
 	
@@ -53,7 +55,7 @@ public class ThemMoiSVControl {
 	}
 	
 	private void themSV(SinhVien sv) {
-		themSVDAO.addSinhVien(sv);
+		daoFile.addSinhVien(sv);
 		tbThemMoiUI.inThongBao("Them SV Thanh Cong!!!");
 		
 		
