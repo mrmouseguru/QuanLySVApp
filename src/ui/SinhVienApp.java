@@ -3,8 +3,10 @@ package ui;
 import java.io.PrintWriter;
 import java.util.Scanner;
 
+import control.InDSSVControl;
 import control.ThemMoiSVControl;
 import database.ArrayListCoSoDuLieu;
+import database.InDSSVDAO;
 import database.ThemSVDAO;
 import database.ThemSVDAOFile;
 
@@ -17,14 +19,19 @@ public class SinhVienApp {
 		ArrayListCoSoDuLieu.initDatabase();
 		
 		ThemSVDAOFile themSVDAORemote = new ThemSVDAOFile("SV.data");
+		InDSSVDAO inDSSVDAO = new InDSSVDAO();
 		
 		ThemMoiSVControl themSVControlRemote = new 
 				ThemMoiSVControl(themSVDAORemote);
 		
 		
-		
 		PrintWriter screenOutRemote = new PrintWriter(System.out, true);
 		Scanner keyBoardInputRemote = new Scanner(System.in);
+		
+		InDSSVUI inDSSVUI = new InDSSVUI(screenOutRemote);
+		
+		InDSSVControl inDSSVControl = new InDSSVControl(inDSSVDAO, inDSSVUI);
+		
 		
 		ThongBaoThemMoiSVUI tbThemMoiSV = new 
 				ThongBaoThemMoiSVUI(screenOutRemote);
@@ -37,6 +44,8 @@ public class SinhVienApp {
 		
 		MainMenuUI mainMenuUIRemote = new MainMenuUI(screenOutRemote, 
 				keyBoardInputRemote, themMoiSVUIRemote);
+		
+		mainMenuUIRemote.setInDSSV(inDSSVControl);
 		
 		mainMenuUIRemote.controlLoop();
 

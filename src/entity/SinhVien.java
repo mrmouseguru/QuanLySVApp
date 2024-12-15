@@ -23,7 +23,7 @@ public abstract class SinhVien implements Serializable {
 		ngaySinh = _ngaySinh;
 	}
 	
-	protected String getHoLuc() {
+	public String getHoLuc() {
 		double diemTB = tinhDiemTB();
         if (diemTB < 5) {
             return "Yếu";
@@ -39,5 +39,9 @@ public abstract class SinhVien implements Serializable {
 	}
 	
 	public abstract double tinhDiemTB();
+	
+	public String getHoTen() {
+		return hoTen;
+	}
 
 }

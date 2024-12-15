@@ -15,8 +15,15 @@ public class InDSSVControl {
 	public InDSSVControl() {
 		
 	}
+	
+	public InDSSVControl(InDSSVDAO inDSSVDAO, InDSSVUI inDSSVUI) {
+		
+		this.inDSSVDAO = inDSSVDAO;
+		this.inDSSVUI = inDSSVUI;
+		
+	}
 
-	public void getDSSV() {
+	public void inDSSV() {
 		// TODO Auto-generated method stub
 		ArrayList<SinhVien> dsSV = inDSSVDAO.getDSSV();
 		inDSSVUI.inDSSV(dsSV);

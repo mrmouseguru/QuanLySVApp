@@ -33,6 +33,8 @@ public class MainMenuUI {
 		keyBoardInput = _keyBoardInput;
 	}
 	
+	
+	
 	public void controlLoop() {
 		screenOut.println("go lenh \"help\" de duoc ho tro");
 		screenOut.flush();
@@ -68,7 +70,7 @@ public class MainMenuUI {
 	}
 	
 	private void inDSSV() {
-		inDSSV.getDSSV();				
+		inDSSV.inDSSV();				
 	}
 	
 	public void setInDSSV(InDSSVControl inDSSVControl) {
