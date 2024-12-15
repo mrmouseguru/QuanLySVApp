@@ -7,6 +7,7 @@ import control.InDSSVControl;
 import control.ThemMoiSVControl;
 import database.ArrayListCoSoDuLieu;
 import database.InDSSVDAO;
+import database.InDSSVDAOFile;
 import database.ThemSVDAO;
 import database.ThemSVDAOFile;
 
@@ -24,6 +25,7 @@ public class SinhVienApp {
 		ThemMoiSVControl themSVControlRemote = new 
 				ThemMoiSVControl(themSVDAORemote);
 		
+		InDSSVDAOFile inDSSVDAOFile = new InDSSVDAOFile("SV.data");
 		
 		PrintWriter screenOutRemote = new PrintWriter(System.out, true);
 		Scanner keyBoardInputRemote = new Scanner(System.in);
@@ -31,6 +33,7 @@ public class SinhVienApp {
 		InDSSVUI inDSSVUI = new InDSSVUI(screenOutRemote);
 		
 		InDSSVControl inDSSVControl = new InDSSVControl(inDSSVDAO, inDSSVUI);
+		inDSSVControl.setInDSSVDAOFile(inDSSVDAOFile);
 		
 		
 		ThongBaoThemMoiSVUI tbThemMoiSV = new 
