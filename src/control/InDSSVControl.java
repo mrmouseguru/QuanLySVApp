@@ -9,29 +9,30 @@ import ui.InDSSVUI;
 
 public class InDSSVControl {
 	
-	private InDSSVDAO inDSSVDAO  = null;
+	//private InDSSVDAO inDSSVDAO  = null;
 	private InDSSVUI inDSSVUI = null;
-	private InDSSVDAOFile inDSSVDAOFile = null;
+	//private InDSSVDAOFile inDSSVDAOFile = null;
+	private InDAO inDAO = null;
 	
 	
 	public InDSSVControl() {
 		
 	}
 	
-	public InDSSVControl(InDSSVDAO inDSSVDAO, InDSSVUI inDSSVUI) {
+	public InDSSVControl(InDAO inDAO , InDSSVUI inDSSVUI) {
 		
-		this.inDSSVDAO = inDSSVDAO;
+		this.inDAO = inDAO;
 		this.inDSSVUI = inDSSVUI;
 		
 	}
 	
-	public void setInDSSVDAOFile(InDSSVDAOFile inDSSVDAOFile) {
-		this.inDSSVDAOFile = inDSSVDAOFile;
+	public void setInDSSVDAOFile(InDAO inDAO) {
+		this.inDAO = inDAO;
 	}
 
 	public void inDSSV() {
 		// TODO Auto-generated method stub
-		ArrayList<SinhVien> dsSV = inDSSVDAOFile.getDSSV();
+		ArrayList<SinhVien> dsSV = inDAO.getDSSV();
 		inDSSVUI.inDSSV(dsSV);
 		
 	}

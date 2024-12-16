@@ -13,7 +13,7 @@ import java.util.List;
 
 import entity.SinhVien;
 
-public class ThemSVDAOFile {
+public class ThemSVDAOFile extends ThemDAO {
 	
 	//fields
 	private File fileData = null;

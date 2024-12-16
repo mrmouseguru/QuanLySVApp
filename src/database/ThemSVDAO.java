@@ -2,7 +2,7 @@ package database;
 
 import entity.SinhVien;
 
-public class ThemSVDAO {
+public class ThemSVDAO extends ThemDAO {
 	
 	public ThemSVDAO() {
 		
