@@ -10,6 +10,7 @@ import database.InDSSVDAO;
 import database.InDSSVDAOFile;
 import database.ThemSVDAO;
 import database.ThemSVDAOFile;
+import database.ThemSVDAOMySQL;
 
 public class SinhVienApp {
 
@@ -20,12 +21,15 @@ public class SinhVienApp {
 		ArrayListCoSoDuLieu.initDatabase();
 		
 		ThemSVDAOFile themSVDAORemote = new ThemSVDAOFile("SV.data");
+		ThemSVDAOMySQL themSVDAOMySQL = new ThemSVDAOMySQL();
 		InDSSVDAO inDSSVDAO = new InDSSVDAO();
 		
 		ThemMoiSVControl themSVControlRemote = new 
-				ThemMoiSVControl(themSVDAORemote);
+				ThemMoiSVControl(themSVDAOMySQL);
 		
 		InDSSVDAOFile inDSSVDAOFile = new InDSSVDAOFile("SV.data");
+		
+		
 		
 		PrintWriter screenOutRemote = new PrintWriter(System.out, true);
 		Scanner keyBoardInputRemote = new Scanner(System.in);
